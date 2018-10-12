@@ -1,0 +1,56 @@
+.bg-image1{
+    background-image: url("../assets/images/soccer-stadium-background-vector-clip-bottom-useProj.jpg"); 
+    background-size: auto ;
+    background-position: top left ; 
+    background-repeat: round ;
+  
+}
+
+/*--------Global Body, Container and Background color Styles and Background-colors(graidents, box shadows, for: Depth to Design */ 
+body{
+    font-family: 'Lato', sans-serif ;
+    background: linear-gradient(to bottom, #33ccff 0%, #f1f1f1 25%, rgba(231, 10, 21, 0.87777) 100%);
+}
+.bg-gradient-1{
+    background: linear-gradient(to bottom right, #33ccff 0%, #ff0066 100%);
+}
+.bg-custom-1{
+
+
+    background: linear gradient(to bottom, #33ccfa 15%, #335577 90%);
+}
+.container{
+    background-image: url("..assets/images/Sports.png");
+}
+
+.width-expand{
+width: 99vw; 
+margin: auto;
+
+
+}
+/*=-----------styles for Each Part of layout, top to bottom, 
+
+1. Box: Padding margin and size ; 
+
+2. display 
+
+3.  typgoraphy */ 
+
+
+/*----------Carousel attribute stylings TEST 
+DELETE css attributes that aren't needed */ 
+span[data-slide="prev"]{
+    background-color: #ff0066 ;
+    color: #000 ; 
+}
+span[data-slide="next"]{
+    background-color: #ff0066 ;
+    color: #000 ; 
+}
+
+.carousel-control-prev-icon{
+
+    background-color: orchid ; 
+}
+

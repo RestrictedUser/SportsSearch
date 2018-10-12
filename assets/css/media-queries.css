@@ -1,0 +1,28 @@
+
+@media screen and (max-width:960px) {
+    body{
+        background-color: rgba(34, 34, 36, 1.0) ; 
+        background-image: none ; 
+        font-weight: bolder ;
+        color: white ;
+    }
+
+
+}
+@media screen and (max-width:768px) {
+    body{
+        background-color: rgba(252, 212, 228, 1.0) ;
+        background-image: none ; 
+        color: black ; 
+        font-weight: 400 ; 
+    }
+}
+@media screen and (max-width:640px){
+    body{
+        background-color: #000000 ;  
+        font-family: 'Roboto', sans-serif; 
+        color: white ;
+        background-image: none ; 
+        font-weight: 700 ; 
+    }
+}

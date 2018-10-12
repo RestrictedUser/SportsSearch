@@ -1,0 +1,132 @@
+
+body{
+    background: linear-gradient(to bottom, #ffffff  0%, rgba(245, 64, 64, 0.555) 100%); 
+    font-family: "serif";
+    font-family: 'Lato', sans-serif ;
+
+}
+.container{
+    /* background-image: url("../images/wavy-dots.png"); */
+}
+/* custom color Classes, global, similar to bootstrap. 
+.bg-gradient-1 bg-custom-1 
+.width-expand-container FOR navbar
+CAN BE USED GLOBALLY                      */ 
+
+
+.bg-gradient-1{
+    background: linear-gradient(to bottom, #33ccff 0%, #ff0066 100%);
+}
+.bg-custom-1{
+
+
+    background: linear gradient(to bottom, #33ccfa 15%, #335577 90%);
+}
+/* FOR HEADER STYLES , DONT USE AS GLOBAL */ 
+.width-expand1{
+width: 99% ; 
+margin: auto ; 
+overflow: hidden; 
+padding: 100px 0px 20px 0px ; 
+background-image: url("wavy-dots.png"); 
+background-size: auto ;
+background-position: top left ; 
+background-repeat: round ;
+
+
+}
+.head-shadow{
+    background: linear-gradient(to bottom, #ffffff  0%, rgba(245, 64, 64, 0.2) 100%); 
+    -webkit-box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+}
+.nav-shadow{
+    background: linear-gradient(to bottom, #ffffff  0%, rgba(245, 64, 64, 0.2) 100%); 
+    padding: 50px 0px 20px 0px; 
+
+}
+
+/*----------CURRENT BOX CLASS FOR HEADER ---------------*/ 
+
+/*--------------ADD background image--------------*/ 
+.width-expand{
+width: 99vw; 
+margin: auto;
+position: relative; 
+left: 0 ; /* Remove Positioning if it ends up affecting box styles or INHERITENCE later on */ 
+top: 0 ; 
+padding: 100px 0px 20px 0px ; 
+text-decoration: underline ; 
+text-decoration-color: #ff0066 ; 
+border-bottom: 2px dashed lightblue; 
+font-family: 'Lato', sans-serif ;
+
+}
+div.topnav{
+    font-family: 'Lato', sans-serif ;
+    background-image: linear-gradient(to right, rgba(221, 69, 69, 0.9) , rgba(255, 255, 255, 0.9));
+    overflow: hidden ;
+    padding: 5px 0px 0px 20px ; 
+    margin: 0px 10px auto 0px ; 
+    width: 100% ; 
+ 
+
+}
+
+.topnav a#icon {
+   float: right ; 
+   text-decoration: none ; 
+
+}
+.topnav a{
+    float: left ; 
+    padding: 17px 19px ; 
+    text-decoration: none ; 
+    text-transform: capitalize ;
+    color: #000; 
+    font-weight: bolder ; 
+
+}
+.topnav a#icon:hover {
+     
+    background-color: rgb(212, 192, 74) ;
+    text-transform: capitalize ; 
+    text-decoration: none ; 
+    border-radius: 5px ; 
+}
+.topnav a:hover{
+
+    background-color: #8f1f1f ;
+    color: black ; 
+    border-radius: 4px ;
+}
+td:hover{
+    text-decoration: underline ;
+    text-decoration-color: #000000 ; 
+}
+/* STYLE OF SPORTS DATA TABLE BELOW CAROUSEL */ 
+table{
+    background-color: rgba(221, 69, 69, 0.2);
+    width: 80% ; 
+    margin: auto ; 
+}
+
+#newsIMG {
+   padding-left:70px;
+}
+
+
+#titleArt,
+#titleAuth{
+    text-align: center;
+}
+
+#newsDis{
+    text-align: center;
+    font-size: 20px;
+}
+
+#home{
+    padding-right:950px;
+}

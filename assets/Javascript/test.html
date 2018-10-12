@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    
+<!-- Employee Tracker -->
+<div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron" style="background-color: rgb(202, 175, 175); color: black">
+          <h1 class="text-center">Get Your Sports Stats</h1>
+        </div>
+    
+       
+        <div class="row">
+    
+          <div class="col-md-12">
+    
+            <!-- Current Employees-->
+            <div class="card mb-4">
+              <div class="card-body">
+                Playeah
+                <table class="table table-sm" id="player-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Player Name</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Position</th>
+                      <th scope="col">Number</th>
+                      <th scope="col">Team</th>
+                      <th scope="col">Height</th>
+                      <th scope="col">Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<form>
+    
+    <!-- first name -->
+    <label for="userInputFirst">First Name: </label>
+    <input id= "userInputFirst" type="text">
+    
+    <!-- last Name -->
+    <label>Last Name: </label>
+    <input id= "userInputLast" type="text">
+    <input id= "userSearch" type="submit">
+
+    </form>
+
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+<script type=text/javascript>
+    
+    var config = {
+apiKey: "AIzaSyDGPV_2V0cMf8EQbXr2-cw2-SLbT4djRaY",
+authDomain: "recent-user-with-all-use-e8e76.firebaseapp.com",
+databaseURL: "https://tm-project-cc0c0.firebaseio.com/",
+projectId: "recent-user-with-all-use-e8e76",
+storageBucket: ""
+};
+    
+    firebase.initializeApp(config);
+    var database = firebase.database();
+       
+        //Hunter, add the id for the player input form here where #userSearch is for player stats data
+        $("#userSearch").on('click', function(event){
+        event.preventDefault();
+        var userInputFirst = $("#userInputFirst").val().trim();
+        var userInputLast = $("#userInputLast").val().trim();
+        clearInput();
+        getPlayers(userInputFirst, userInputLast);
+        
+        //console.log(userInputFirst);
+        // console.log(userInputLast);
+    });
+// returns list of players with match firstName lastName
+function getPlayers(firstName,lastName){
+        var players = [];
+
+     var queryURL = "https://api.fantasydata.net/v3/nfl/stats/JSON/Players?key=f63459df4d324742a9ef550a4ad5a83f&Name=Michael";  
+     
+
+    $.ajax({
+        url: queryURL,
+        method:"GET",
+        data:"{body}",
+    })
+    .done(function(data) {
+        alert("success"); 
+        console.log(data);
+
+        for(var i = 0; i < data.length; i++){
+            if(data[i].FirstName === firstName && data[i].LastName === lastName){
+                
+                // console.log(data);
+
+                //Player Names
+                var playerFirstName = data[i].FirstName ;
+                var playerLastName = data[i].LastName;
+
+                //Player Age & weight/height
+                var playerAge = data[i].Age;
+                var playerWeight = data[i].Weight;
+                var playerHeight = data[i].Height;
+
+                //Player Number & Team
+                var playerNumber = data[i].Number;
+                var playerTeam = data[i].Team;
+                var playerPosition = data[i].FantasyPosition;
+
+                var player = {
+                    Name: playerFirstName + " " + playerLastName,
+                    Team: playerTeam,
+                    Age: playerAge,
+                    Number: playerNumber,
+                    Position:playerPosition,
+                    Weight: playerWeight,
+                    Height: playerHeight
+                };
+                players.push(player);
+                database.ref().push(player);
+                console.log(players);
+                
+
+                        // Grabs user input
+            var playerName = $("#userSearch").val();
+            
+            var newRow = $("<tr>").append(
+                $("<td>").html(player.Name),
+                $("<td>").text(playerAge),
+                $("<td>").text(playerPosition),
+                $("<td>").text(playerNumber),
+                $("<td>").text(playerTeam),
+                $("<td>").text(playerHeight),
+                $("<td>").text(playerWeight)
+            );
+            
+            // Append the new row to the table
+            $("#player-table > tbody").append(newRow);
+
+            return false;
+
+            
+            
+            
+            // scrap this table
+            // database.ref().on("child_added", function (snapshot){
+            
+            // var Name = snapshot.val().Name;
+            // var Age = snapshot.val().Age;
+            // var Team = snapshot.val().Team;
+            
+    
+            // $("#playerData").append("<tr><td>" + "Name: " + player.Name + "</td><td>"  + playerAge + "</td><td>" + "</td><td>" + player.Team + "</td></tr>");
+            //      });
+                
+            }
+        }
+
+
+    })
+    .fail(function() {
+        alert("error");
+    });
+    return players;
+};
+
+
+//make two var playerFirstName= $("#inputButtonFirstName").val().trim()
+//var playerLastName = $("#inputButtonLastName").val().trim
+// var result = getPlayers("Tom","Brady");
+
+var result = getPlayers(userInputFirst, userInputLast);
+console.log(result);
+
+function clearInput(){
+    $("#userInputFirst").val("");
+    $("#userInputLast").val("");
+}
+
+    
+    
+
+</script>
+
+</body>
+</html>

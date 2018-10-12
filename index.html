@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/png" href="assets/images/download.jpg"/>
+
+
+  <!----Bootstrap Template Styling-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="Sports-Hunter\assets\css\template-style.css"> -->
+
+<!-----Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+  <style> /* change inline style once done adding images -------------->IMPORTANT */ 
+  #newsDis{
+    font-size:20px;
+  }
+
+  a{
+    text-align: center;
+  }
+
+  .container{
+    background-image: url("assets/images/Sports.png");
+}
+
+.head-shadow{
+    background: linear-gradient(to bottom, #ffffff  0%, rgba(245, 64, 64, 0.2) 100%); 
+    -webkit-box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -9px 73px 5px rgba(0,0,0,0.75);
+}
+
+  </style>
+</head>
+<body>
+
+    <div class="container-fluid head-shadow width-expand ">
+        <p class="lead display-4 text-center" style="font-family: cursive; ">SPORTS HUNTER </p>
+       
+       
+       
+       </div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark w-100">
+  <!-- <a class="navbar-brand float-right" href="#"><img src="assets/images/logo-football.png" width="73px" ></a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+    <!-- <img src="../assets/images/logo-football.png" width="28px"> -->
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item ml-5">
+        <a class="nav-link ml-1" href="layout.html"><h1>Stats Page</h1></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link ml-1" href="layout.html#semantic-footer">To Bottom</a>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link ml-1" href="#">Link2</a>
+      </li>  -->
+      <form class="form-inline my-2 my-lg-0 ml-5 pl-5" style="padding-left: 200px; " > <!---padding and margin add up only to next breakpoint on the right -->
+      <input id="video-input" class="form-control mr-sm-2 float-right" type="search" placeholder="Search" aria-label="Search">
+      <button id="select-video" class="btn btn-outline-success my-2 my-sm-0 float-right" type="submit">Search For Sports News/Videos</button>
+      </form>
+   
+    </ul>
+  </div>  
+</nav>
+<!----Search ID: inputSearchValue buttonClickValue
+    button itself is buttonClickValue
+
+    input field is inputSearchValue , can shorten or make any ID change we need for JS because it doens't affect layout (obviously)
+
+
+JAVASCRIPT POSSIBLE ^ 
+
+
+
+-->
+<div class="container" style="margin-top:30px"> <!---- Keeping the inline styles because they are default bootstrap classes-->
+  <div class="row">
+    <div class="col-sm-4 bg-warning">
+      <h2 class="w-100">Sports Pictures</h2>
+      <h5>Highlight Reel: </h5>
+      <!----TRying to add carousel onto second page- might be too small-->
+      <!---- change bootstrap classes to accomadate carousel being too small-->
+      <div id="slider" class="carousel slide rounded-top" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-slider" data-slide-to="1"></li>
+              <li data-target="#carousel-slider" data-slide-to="2"></li>
+            </ul>
+          
+            <!-- The slideshow of the carousel(pics moving) -->
+            <!------MAX WIDTH OF EACH PIC TO BE THE SAME: MAX="500PX" *WIDTH,HEIGHT = 500 PX  -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/images/3920168_080918-kgo-ap-49ers-img.jpg" title="tooltip1" max="300px" width="300px" height="300px" alt="Carousel 1">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/Kam-Chancellor-Tackle-STACK.jpg" max="300px" height="300px" alt="Carousel img 2 ">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/peterson_952_634.jpg" max="300px" height="300px" width="300px" alt="Carousel 3">
+              </div>
+              </div>
+
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#slider" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#slider" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>   
+            </div> <!------Add small carousel if possible-->
+      
+    <h3 class="display-4">Links to More Sports!</h3>
+
+      <ul class="nav nav-pills flex-column">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="https://sports.yahoo.com/" target="_blank">Yahoo Sports</a>
+        </li>
+        <br>
+        <li class="nav-item">
+          <a class="nav-link active" href="http://www.espn.com/" target="_blank">ESPN</a>
+        </li>
+        <br>
+        <li class="nav-item">
+            <a class="nav-link active" href="indexWiki.html" target="_blank">Click here to run a Wikipedia search of your favorite player.</a>
+          </li>
+        <br>
+      
+      </ul>
+
+      <hr class="d-sm-none">
+
+    </div>
+
+    <div class="col-lg-8">
+      <!-- Title -->
+      <h1 id="titleArt">TITLE HEADING</h1>
+      <!-- Author -->
+      <h2 id="titleAuth">Author</h2>
+      <!-- Source -->
+      <a id="source" target="_blank">Read More From the Source</a>
+      <!-- Summary -->
+      <p id="newsDis">Error Reload</p>
+      <!-- IMG -->
+      <div class="fakeimg" id="newsIMG"><img  max="500px" width="500px" height="500px">Error Reload</div>
+    
+      <br>
+        
+      
+
+    </div>
+  </div>
+</div>
+
+<div id="semantic-footer" class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+  <p class="lead"> &copy; MS, TM, AO, HC</p>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+<script type="text/javascript" src="assets/Javascript/app.js"></script>
+
+</body>
+</html>

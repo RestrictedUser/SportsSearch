@@ -1,0 +1,2 @@
+test.html
+when adding a new player through input form it seems to reset players array because the new player is always array of 0. I want the players[] to hold the json values of each player for later use.
