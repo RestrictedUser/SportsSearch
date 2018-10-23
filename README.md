@@ -8,3 +8,7 @@ Status: Currently this project is not in further development.
 Content Creators: Tyler Middleton, Mike Sevik, Hunter ___.
 
 Deployed link: https://mikes94116.github.io/SportsSearch/
+
+Developer Notes: App focuses on data on players in the NFL from 2017 only. Type names for player search with capitals as the first letter in the name. 
+
+EX.Tom Brady
